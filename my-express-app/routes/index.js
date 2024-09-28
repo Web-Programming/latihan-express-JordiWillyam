@@ -11,4 +11,15 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Us' });
 });
 
+// GET route for Contact Us page
+router.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+// POST route to handle form submission
+router.post('/submit-contact', (req, res) => {
+  const { name, email, message } = req.body;
+  res.render('submit-contact', { name, email, message });
+});
+
 module.exports = router;
