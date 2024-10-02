@@ -1,0 +1,92 @@
+<%- include('master', 
+{ 
+  title: 'Paket Wisata',
+  body: `
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+  
+  <h1>Paket Wisata Palembang</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nama Paket</th>
+        <th>Durasi</th>
+        <th>Harga</th>
+        <th>Deskripsi</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Paket 1</td>
+        <td>3 Hari 2 Malam</td>
+        <td>Rp 1.500.000</td>
+        <td>Trip Ke Pulau Bangka dan Belitung</td>
+      </tr>
+
+      <tr>
+        <td>Paket 2</td>
+        <td>2 Hari 1 Malam</td>
+        <td>Rp 1.000.000</td>
+        <td>Trip Ke Pulau Bangka</td>
+      </tr>
+
+      <tr>
+        <td>Paket 3</td>
+        <td>1 Hari</td>
+        <td>Rp 500.000</td>
+        <td>Tour Keliling Palembang.</td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+  <div class="button-container">
+    <a href="/orderpaket" class="btn">Order Paket</a>
+  </div>
+  `
+})
+%>
