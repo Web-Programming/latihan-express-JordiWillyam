@@ -48,11 +48,8 @@
 
   <h1>Order Paket Wisata</h1>
   <div class="form-container">
-    <form action="/submit-order" method="POST">
-        
-      <label for="name">Nama Lengkap:</label>
-      <input type="text" id="name" name="name" required>
-
+    <form action="/orderdetail" method="POST">
+       
       <label for="package">Pilih Paket Wisata:</label>
       <select id="package" name="package" required>
         <option value="Paket 1">Paket 1 - 3 Hari 2 Malam (Rp 1.500.000)</option>
@@ -60,12 +57,27 @@
         <option value="Paket 3">Paket 3 - 1 Hari (Rp 500.000)</option>
       </select>
 
-      <label for="number">Jumlah Orang:</label>
-      <input type="number" id="number" name="number" min="1" required>
+      <label for="name">Nama Lengkap:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="pnumber">Nomor Telfon:</label>
+      <input type="tel" id="pnumber" name="pnumber" required>
+
+      <label for="date">Tanggal Keberangkatan:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="payment">Metode Pembayaran:</label>
+      <select id="payment" name="payment" required>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="Kartu Kredit">Kartu Kredit</option>
+        <option value="E-Wallet">E-Wallet (OVO, GoPay, dll)</option>
+      </select>
 
       <button type="submit" class="btn">Pesan Sekarang</button>
     </form>
   </div>
   `
-})
-%>
+})%>

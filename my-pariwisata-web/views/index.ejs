@@ -1,11 +1,53 @@
-<!-- Template express untuk mengakses file master -->
-<%- include('master', 
-{ 
-  title: title,
+<%- include('master', { 
+  title: 'Tour Pariwisata Indonesia',
   body: `
-  <h1>Selamat Datang di Website Pariwisata Indonesia</h1>
-  <p>Ini adalah halaman official Pariwisata Indonesia. Anda dapat memesan paket wisata pada website ini.
-     Selamat menikmati keindahan wisata Indonesia</p>
+  <section text-center>
+    <div class="container">
+      <h1 >Selamat Datang di Pariwisata Indonesia</h1>
+      <p >Nikmati keindahan alam dan budaya Indonesia dengan berbagai pilihan paket wisata.</p>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h2 class="text-center">Paket Wisata Populer</h2>
+    <div class="row mt-4">
+      
+      <!-- Paket 1: Pulau Bangka dan Belitung -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="images/belitung.jpg" class="card-img-top" alt="Bangka Belitung">
+          <div class="card-body">
+            <h5 class="card-title">Paket 1: Pulau Bangka dan Belitung</h5>
+            <p class="card-text">Jelajahi keindahan Pulau Bangka dan Belitung dengan pantai-pantai menakjubkan.</p>
+            <a href="orderpaket" class="btn btn-primary">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paket 2: Pulau Bangka -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="images/bangka.jpg" class="card-img-top" alt="Pulau Bangka">
+          <div class="card-body">
+            <h5 class="card-title">Paket 2: Pulau Bangka</h5>
+            <p class="card-text">Nikmati pesona Pulau Bangka dengan keindahan alam dan budaya lokal.</p>
+            <a href="orderpaket" class="btn btn-primary">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paket 3: Keliling Kota Palembang -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="images/palembang.jpg" class="card-img-top" alt="Kota Palembang">
+          <div class="card-body">
+            <h5 class="card-title">Paket 3: Keliling Kota Palembang</h5>
+            <p class="card-text">Temukan keunikan sejarah dan kuliner kota Palembang dengan paket city tour.</p>
+            <a href="orderpaket" class="btn btn-primary">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   `
-})
-%>
+}) %>

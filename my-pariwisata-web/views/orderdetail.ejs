@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Thank You</title>
 </head>
 <body>
-    
+  <h1>Detail Pemesanan</h1>
+  <div class="orderdetail">
+    <p><strong>Paket Wisata:</strong> <%= package %></p>
+    <p><strong>Nama Lengkap:</strong> <%= name %></p>
+    <p><strong>Email:</strong> <%= email %></p>
+    <p><strong>Nomor Telfon:</strong> <%= pnumber %></p>
+    <p><strong>Tanggal Keberangkatan:</strong> <%= date %></p>
+    <p><strong>Metode Pembayaran:</strong> <%= payment %></p>
+
+    <a href="/" class="btn">Kembali ke Halaman Utama</a>
+  </div>
 </body>
 </html>

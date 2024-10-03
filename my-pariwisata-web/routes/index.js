@@ -18,7 +18,19 @@ router.get('/orderpaket', function(req, res, next) {
 
 // Order Detail Page (POST - Mengambil data dari orderpaket)
 router.post('/orderdetail', function(req, res, next) {
-  res.render('orderdetail', { title: 'Detail Pemesanan Paket' });
+  // Mengambil data dari form yang dikirim melalui req.body
+  const { package, name, email, pnumber, date, payment } = req.body;
+
+  // Kirim data ke template orderdetail.ejs
+  res.render('orderdetail', { 
+    title: 'Detail Pemesanan Paket', 
+    package, 
+    name, 
+    email, 
+    pnumber, 
+    date, 
+    payment 
+  });
 });
 
 module.exports = router;
