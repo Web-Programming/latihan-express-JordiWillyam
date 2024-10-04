@@ -33,4 +33,13 @@ router.post('/orderdetail', function(req, res, next) {
   });
 });
 
+router.get('/paketwisata2', function(req, res, next) {
+  let listpaketwisata = [
+    {'nama' : 'Wisata Pulau Kemaro', 'harga' : 500000},
+    {'nama' : 'Wisata Punti Kayu', 'harga' : 250000},
+    {'nama' : 'Wisata Jakabaring', 'harga' : 100000}
+  ]
+  res.render('paketwisata2', { title: 'Paket Wisata 2' , listpaketwisata : listpaketwisata});
+});
+
 module.exports = router;
