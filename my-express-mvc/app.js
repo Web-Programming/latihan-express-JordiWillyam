@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//load mongodb db connection (jangan lupa npm install mongoose) 
+//{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
+require('./app_server/models/db');
+
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
