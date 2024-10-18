@@ -8,8 +8,11 @@ var logger = require('morgan');
 //{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
 require('./app_server/models/db');
 
+//Daftar router
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
+var mahasiswasRouter = require("./app_server/routes/mahasiswas");
+
 
 var app = express();
 
@@ -23,8 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Menggunkan router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api',mahasiswasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
