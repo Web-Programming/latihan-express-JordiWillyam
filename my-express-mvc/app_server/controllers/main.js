@@ -8,7 +8,7 @@ const kontak =(req,res) => {
 };
 
 const profil =(req,res) => {
-    res.render('profil',{title: 'Ini Halaman Profil yaaaa'});
+    res.render('profil',{title: 'Ini Halaman Profil ya'});
 };
 
 module.exports = { index,kontak,profil }; 

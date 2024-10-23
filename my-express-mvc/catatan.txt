@@ -1,0 +1,17 @@
+update nvm : 
+- cari di google nvm for windows dan buka guthub coreybutler dan klik release
+
+- https://github.com/coreybutler/nvm-windows/releases/tag/1.1.12
+
+- download nvm-setup.exe
+
+- jalankan lalau buka cmd nvm install lts dan nvm use lts 
+
+- ketik node -v untuk memeriksa version nvm
+
+untuk menggunakan postman :
+masukkan link = http://localhost:3000/mahasiswa/insert // untuk insert 
+dan jika routesnya pada app.js = app.use('/mahasiswa',mahasiswasRouter);
+klik post 
+lalu klik body dan klik x.www.form.urlecoded 
+masukkan key sesuai dengan skema yang diperlukan beserta valuenya lalu klik send

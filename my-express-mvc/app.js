@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 //load mongodb db connection (jangan lupa npm install mongoose) 
 //{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
+
 require('./app_server/models/db');
 
 //Daftar router
@@ -26,10 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Menggunkan router
+//list router yang digunakan
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api',mahasiswasRouter);
+app.use('/mahasiswa',mahasiswasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

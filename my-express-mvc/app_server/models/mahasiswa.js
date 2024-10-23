@@ -9,5 +9,6 @@ const mahasiswaSchema = new mongoose.Schema({
     aktif:{type: Boolean,}
 })
 
+// const Mahasiswa = mongoose.model("namaModel",nama Schema)
 const Mahasiswa = mongoose.model("Mahasiswa",mahasiswaSchema);
 module.exports= Mahasiswa;
