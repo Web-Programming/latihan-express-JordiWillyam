@@ -7,5 +7,8 @@
 
 <section class="results">
     <!-- Cara memanggil component didalam component lain -->
-    <app-housing-location></app-housing-location>
+     <!-- directive untuk perulangan *ngFor bisa atau *ngIf -->
+    <app-housing-location *ngFor="let housingLocation of housingLocationList"
+    [housingLocation]="housingLocation">
+    </app-housing-location>
 </section>
