@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
       <p class="listing-location">
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
-      <a routerLink="/details">Show More </a>
+      <a [routerLink]="['/details', housingLocation.id]">Show More </a>
     </section>
   `,
   styleUrl: './housing-location.component.css',
