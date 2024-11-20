@@ -3,8 +3,9 @@
 
 let mongoose = require('mongoose');
 // let dbURI = "mongodb://localhost:27017/pawII-si52" database di mongo db adalah di akhir / yaitu pawII-si52 adalah databasenya
-let dbURI = "mongodb+srv://paw2:si@paw2.iendmj6.mongodb.net/PAWII-SI?retryWrites=true&w=majority&appName=paw2"
+// let dbURI = "mongodb+srv://paw2:si@paw2.iendmj6.mongodb.net/PAWII-SI?retryWrites=true&w=majority&appName=paw2"
 // let dbURI = "mongodb://localhost:27017/namadb"
+let dbURI = "mongodb://localhost:27017/mvc"
 
 mongoose.connect(dbURI,{
     useNewURLParser: true
