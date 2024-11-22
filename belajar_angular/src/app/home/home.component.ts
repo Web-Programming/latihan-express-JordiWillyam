@@ -14,33 +14,14 @@ import { HousingService } from '../housing.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  housingLocationList: HousingLocation[] = [
-    {
-      id: 0,
-      name: 'Tulus',
-      city: 'Palembang',
-      state: 'Sumsel',
-      photo:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT778q7RjEtGzcQo6zbH6297O2HvEsSc66kDA&s',
-      avaliableUnits: 1,
-      wifi: true,
-      laundry: true,
-    },
-
-    {
-      id: 1,
-      name: 'Land Land',
-      city: 'Palembang',
-      state: 'Sumsel',
-      photo:
-        'https://nowpalembang.com/wp-content/uploads/2021/04/perumahan-palembang.jpg',
-      avaliableUnits: 12,
-      wifi: true,
-      laundry: false,
-    },
-  ];
+  housingLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
+
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+    // this.housingLocationList =
+    this.housingService.getAllHousingLocations()
+      .then((listData: HousingLocation[]) => {
+        this.housingLocationList = listData;
+      });
   }
 }

@@ -27,11 +27,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Midleware untuk mengatasi CORS
+app.use((req,res,next) => {
+ res.setHeader("Access-Control-Allow-Origin", "*");
+ res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 //list router yang digunakan
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/mahasiswa',mahasiswasRouter);
 app.use('/housing',housingRouter)
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
