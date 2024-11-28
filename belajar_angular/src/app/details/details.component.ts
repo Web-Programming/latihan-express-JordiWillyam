@@ -63,6 +63,7 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
   `,
   styleUrl: './details.component.css',
 })
+
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingLocationId = 0;
@@ -99,6 +100,6 @@ export class DetailsComponent {
       this.applyForm.value.email ?? ''
     );
   }
-
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
   //panggil API simpan data registrasi via service
 }

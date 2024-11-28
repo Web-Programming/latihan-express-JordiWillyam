@@ -55,7 +55,38 @@ export class HousingService {
     //   (housingLocation) => housingLocation.id == id
     // );
   }
-  submitApplication(firstName: String, lastName: String, email: String) {
-    console.log(firstName, lastName, email);
+  // submitApplication(firstName: String, lastName: String, email: String) {
+  //   console.log(firstName, lastName, email);
+  // }
+
+  // Mengirim aplikasi untuk perumahan
+  async submitApplication(firstName: String, lastName: String, email: String): Promise<any> {
+    const apiurl = "http://localhost:3000/register";;
+    try {
+      const response = await fetch(apiurl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+        }),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Gagal mengirim aplikasi');
+      }
+      const result = await response.json();
+      console.log('Application submitted successfully:', result);
+
+      return result;
+    } catch (error: any) {
+      console.error('Error during application submission:', error);
+
+      throw error;
+    }
   }
+
 }

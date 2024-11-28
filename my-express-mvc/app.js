@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var registerRouter = require('./app_server/routes/register');
 
 //load mongodb db connection (jangan lupa npm install mongoose) 
 //{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
