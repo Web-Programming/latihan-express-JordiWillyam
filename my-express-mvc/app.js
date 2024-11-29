@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,8 @@ var registerRouter = require('./app_server/routes/register');
 //{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
 
 require('./app_server/models/db');
+// harus dibawah depedensi lainnya
+require("./app_server/configs/passport"); //load file config passport
 
 //Daftar router
 var indexRouter = require('./app_server/routes/index');
