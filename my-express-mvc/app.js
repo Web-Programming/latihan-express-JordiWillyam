@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var registerRouter = require('./app_server/routes/register');
 
+//untuk mengatasi error cors
+var cors = require('cors');
+
 //load mongodb db connection (jangan lupa npm install mongoose) 
 //{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
 
@@ -20,6 +23,9 @@ var mahasiswasRouter = require("./app_server/routes/mahasiswas");
 var housingRouter = require("./app_server/routes/housing");
 
 var app = express();
+
+// untuk mengatasi error cors
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname,'app_server', 'views'));
