@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 const ctrlAuth = require('../controllers/controllerAuth');
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-// http://localhost:3000/users/register
-// http://localhost:3000/users/login
+//http://localhost:3000/users/register
+//http://localhost:3000/users/login
 
 module.exports = router;

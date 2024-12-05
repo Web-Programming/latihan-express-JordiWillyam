@@ -1,31 +1,22 @@
-require('dotenv').config();
+ //menjalankan file .env
+ require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var registerRouter = require('./app_server/routes/register');
-
-//untuk mengatasi error cors
-var cors = require('cors');
-
-//load mongodb db connection (jangan lupa npm install mongoose) 
-//{tambahkan kode dibawah ini yang mengarah ke kode db tadi yaitu './app_server/models/db'}
-
+//load mongodb db connection
 require('./app_server/models/db');
-// harus dibawah depedensi lainnya
-require("./app_server/configs/passport"); //load file config passport
+//dibawah module" penting
+require("./app_server/configs/passport"); //load file config
 
-//Daftar router
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
-var mahasiswasRouter = require("./app_server/routes/mahasiswas");
-var housingRouter = require("./app_server/routes/housing");
-
+// tambahan
+var mahasiswasRouter = require('./app_server/routes/mahasiswas');
+var housingRouter = require('./app_server/routes/housing');
+var applyRouter = require('./app_server/routes/apply');
 var app = express();
-
-// untuk mengatasi error cors
-app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname,'app_server', 'views'));
@@ -37,20 +28,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Midleware untuk mengatasi CORS
-app.use((req,res,next) => {
- res.setHeader("Access-Control-Allow-Origin", "*");
- res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
+//middleware -> utk memperbolehkan mengakses dgn localhost berbeda
+//Allow CORS
 
-//list router yang digunakan
+app.use((req,res,next)=> {
+  res.setHeader("Access-Control-Allow-Origin","*");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+      return res.sendStatus(200); // Tangani preflight request
+  }
+  next();
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/mahasiswa',mahasiswasRouter);
-app.use('/housing',housingRouter)
-
-
+// tambahan
+app.use('/api', mahasiswasRouter);
+app.use('/housing', housingRouter);
+app.use('/register', applyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

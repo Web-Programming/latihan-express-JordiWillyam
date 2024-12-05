@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const housingController = require ("../controllers/controllerHousing");
+const HousingController = require("../controllers/controllerHousing")
 
-router.get("/", housingController.index);
-
+    router.get('/', HousingController.Index);
+    router.get('/:id', HousingController.IndexById);
 
 module.exports = router;

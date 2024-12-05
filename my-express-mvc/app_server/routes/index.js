@@ -4,6 +4,7 @@ var router = express.Router();
 //Panggil controller main
 var mainController = require('../controllers/main');
 
+
 /* GET home page. */
 router.get('/', mainController.index);
 router.get('/kontak',mainController.kontak);

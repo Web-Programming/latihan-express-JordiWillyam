@@ -1,12 +1,11 @@
 const passport = require('passport');
 const User = require('../models/user');
 
-// jika tidak menggunakan passport maka middleware harus dituliskan disetiap metode dalam controllerAuth
 const login = (req, res, next) => {
     if (!req.body.email || !req.body.password) {
         return res.status(400).json({ "message": "All fields required" });
     }
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, user, info) => { //authenticate -> methods dari passport
         if (err) {
             return res.status(404).json(err);
         }
@@ -40,5 +39,4 @@ const register = (req, res) => {
                 });
         });
 };
-
 module.exports = { register, login };

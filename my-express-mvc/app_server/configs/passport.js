@@ -1,13 +1,9 @@
-//Buat Konfigurasi Middleware Passport
-// Buat folder configs di dalam folder app_server
-// Buat file passport.js
-// Buat configurasi authentikasi menggunakan library passport
-
+// Modul yang digunakan
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy; //passport-local digunakan untuk generate
 const User = require("../models/user");
-
-//middleware 
+ 
+//Middleware
 passport.use(new LocalStrategy({
     usernameField: 'email',
 }, (username, password, done) => {
@@ -26,7 +22,7 @@ passport.use(new LocalStrategy({
                 message: 'Incorrect password'
             })
         }
-        return done(null, user);
+        return done(null, user); //berhasil login
     }).catch((err) => {
         if (err) {
             return done(err);
